@@ -1,0 +1,1076 @@
+{
+	"info": {
+		"_postman_id": "42d9f06b-5c1b-431b-b031-8eb08df0f299",
+		"name": "Gestion Championnat API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32512692"
+	},
+	"item": [
+		{
+			"name": "Utilisateurs - GET All",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/utilisateurs",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"utilisateurs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Utilisateurs - GET by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/utilisateurs/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"utilisateurs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Utilisateurs - GET by Email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/utilisateurs/email/john.doe@example.com",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"utilisateurs",
+						"email",
+						"john.doe@example.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Utilisateurs - POST Create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200 or 201', function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nom\": \"Test\",\n  \"prenom\": \"User\",\n  \"email\": \"test.user@example.com\",\n  \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/utilisateurs",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"utilisateurs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Utilisateurs - PUT Update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nom\": \"Updated\",\n  \"prenom\": \"User\",\n  \"email\": \"updated.user@example.com\",\n  \"password\": \"newpassword\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/utilisateurs/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"utilisateurs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Utilisateurs - DELETE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 204 or 404', function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/utilisateurs/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"utilisateurs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Championnats - GET All",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/championnats",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"championnats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Championnats - GET by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/championnats/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"championnats",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Championnats - POST Create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200 or 201', function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nom\": \"Test Championnat\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/championnats",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"championnats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Championnats - PUT Update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nom\": \"Championnat Modifié\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/championnats/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"championnats",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Championnats - DELETE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 204 or 404', function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/championnats/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"championnats",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Equipes - GET All",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/equipes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"equipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Equipes - GET by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/equipes/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"equipes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Equipes - GET by Championnat ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/championnats/1/equipes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"championnats",
+						"1",
+						"equipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Equipes - POST Create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200 or 201', function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nom\": \"Test Equipe\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/equipes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"equipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Equipes - POST Add to Championnat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nom\": \"Equipe Championnat\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/championnats/1/equipes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"championnats",
+						"1",
+						"equipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Equipes - PUT Update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nom\": \"Equipe Modifiée\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/equipes/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"equipes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Equipes - DELETE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 204 or 404', function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/equipes/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"equipes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Journees - GET All",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/journees",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"journees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Journees - GET by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/journees/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"journees",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Journees - GET by Championnat ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/championnats/1/journees",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"championnats",
+						"1",
+						"journees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Journees - POST Create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200 or 201', function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"numero\": 5,\n  \"date\": \"2025-03-20\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/championnats/1/journees",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"championnats",
+						"1",
+						"journees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Journees - PUT Update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"numero\": 2,\n  \"date\": \"2025-03-21\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/journees/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"journees",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Journees - DELETE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 204 or 404', function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/journees/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"journees",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resultats - GET All",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/resultats",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"resultats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resultats - GET by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/resultats/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"resultats",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resultats - GET by Championnat ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/championnats/1/resultats",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"championnats",
+						"1",
+						"resultats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resultats - GET by Journee ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/journees/1/resultats",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"journees",
+						"1",
+						"resultats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resultats - POST Create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200 or 201', function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"equipeDomicile\": { \"id\": 1 },\n  \"equipeVisiteur\": { \"id\": 2 },\n  \"scoreDomicile\": 2,\n  \"scoreVisiteur\": 1\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/journees/1/resultats",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"journees",
+						"1",
+						"resultats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resultats - PUT Update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"scoreDomicile\": 3,\n  \"scoreVisiteur\": 1,\n  \"equipeDomicile\": { \"id\": 1 },\n  \"equipeVisiteur\": { \"id\": 2 }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/resultats/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"resultats",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resultats - DELETE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Status code is 204 or 404', function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/resultats/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"resultats",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080/api"
+		}
+	]
+}
